@@ -82,7 +82,22 @@
                         .md5 + "' target='_blank'>" + info[i].title + "</a></td>").appendTo(str);
 
                     // Artist
-                    $("<td width='40%'>" + info[i].artist + "</td>").appendTo(str);
+                    $("<td width='25%'>" + info[i].artist + "</td>").appendTo(str);
+                    
+                    // 差分
+        if(info[i].url_diff != "" && info[i].url_diff != null) {
+        	if(info[i].name_diff != "" && info[i].name_diff != null) {
+	        $("<td width='15%'><a href='" + info[i].url_diff + "'>" + info[i].name_diff + "</a></td>").appendTo(str);
+        	} else {
+	        $("<td width='15%'><a href='" + info[i].url_diff + "'>" + info[i].url_diff + "</a></td>").appendTo(str);
+        	}
+        } else {
+        	if(info[i].name_diff != "" && info[i].name_diff != null) {
+	        $("<td width='15%'>" + info[i].name_diff + "</td>").appendTo(str);
+        	} else {
+	        $("<td width='15%'></td>").appendTo(str);
+        	}
+        }
 
                     // Comment
                     $("<td width='10%'>" + info[i].comment + "</td>").appendTo(str);
