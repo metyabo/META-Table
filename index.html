@@ -54,7 +54,7 @@
                 for (var i = 0; i < info.length; i++) {
                     if (x != info[i].level) {
                         if (obj_sep != null) {
-                            obj_sep.html("<td colspan='4'>" + "<b>" + mark + x + " (" + count +
+                            obj_sep.html("<td colspan='3'>" + "<b>" + mark + x + " (" + count +
                                 "譜面)</b></td>");
                         }
                         obj_sep = $("<tr class='table-dark' style='text-align:center' id='" + mark + info[i].level +
@@ -75,9 +75,6 @@
                             i]
                         .md5 + "' target='_blank'>" + info[i].title + "</a></td>").appendTo(str);
 
-                    // Artist
-                    $("<td width='40%'>" + info[i].artist + "</td>").appendTo(str);
-                    
 		    // Comment
                     $("<td width='10%'>" + info[i].comment + "</td>").appendTo(str);
                     str.appendTo(obj);
@@ -87,7 +84,7 @@
                 $("</tbody>").appendTo(obj);
 
                 if (obj_sep != null) {
-                    obj_sep.html("<td class='table-dark' style='text-align:center' colspan='4'>" + "<b>" + mark + x +
+                    obj_sep.html("<td class='table-dark' style='text-align:center' colspan='3'>" + "<b>" + mark + x +
                         " (" + count + "譜面)</b></td>");
                 }
             }
